@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CustomObjects.cs](./CS/WindowsFormsApplication1/CustomObjects.cs) (VB: [CustomObjects.vb](./VB/WindowsFormsApplication1/CustomObjects.vb))
+* [DragDropResourcesHelper.cs](./CS/WindowsFormsApplication1/DragDropResourcesHelper.cs) (VB: [DragDropResourcesHelper.vb](./VB/WindowsFormsApplication1/DragDropResourcesHelper.vb))
+* [Form1.cs](./CS/WindowsFormsApplication1/Form1.cs) (VB: [Form1.vb](./VB/WindowsFormsApplication1/Form1.vb))
+* [Program.cs](./CS/WindowsFormsApplication1/Program.cs) (VB: [Program.vb](./VB/WindowsFormsApplication1/Program.vb))
+<!-- default file list end -->
 # How to reorder resources in SchedulerControl views via the "drag-drop" operation (WinForms version)
 
 
