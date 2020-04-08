@@ -8,6 +8,7 @@ using DevExpress.XtraScheduler.Drawing;
 using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.Services;
+using DevExpress.Portable.Input;
 
 namespace WindowsFormsApplication1 {
     public class DragDropResourcesHelper {
@@ -76,7 +77,7 @@ namespace WindowsFormsApplication1 {
             this.provider = provider;
         }
 
-        public override void OnMouseDown(MouseEventArgs e) {
+        public override void OnMouseDown(PortableMouseEventArgs e) {
             downHitInfo = null;
             downHitPoint = Point.Empty;
             SchedulerHitInfo hitInfo = (provider as SchedulerControl).ActiveView.ViewInfo.CalcHitInfo(e.Location, false);
@@ -84,12 +85,11 @@ namespace WindowsFormsApplication1 {
                 downHitInfo = hitInfo;
                 downHitPoint = e.Location;
             }
-            else 
+            else
                 base.OnMouseDown(e);
         }
-
-        public override void OnMouseMove(MouseEventArgs e) {
-            if(e.Button == MouseButtons.Left && downHitInfo != null) {
+        public override void OnMouseMove(PortableMouseEventArgs e) {           
+            if(e.Button == PortableMouseButtons.Left && downHitInfo != null) {
                 Size dragSize = SystemInformation.DragSize;
                 Rectangle dragRect = new Rectangle(new Point(downHitPoint.X - dragSize.Width / 2, downHitPoint.Y - dragSize.Height / 2), dragSize);
 
@@ -100,8 +100,8 @@ namespace WindowsFormsApplication1 {
                 }
             }
             else
-                base.OnMouseMove(e);            
-        }
+                base.OnMouseMove(e);
+        }        
     }
 
 
